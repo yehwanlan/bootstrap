@@ -34,3 +34,7 @@ bg-primary避開內邊界要往下寫一層
 如果你使用的是 Bootstrap 5，也可以改用其他類別：
 bg-secondary：灰色/bg-success：綠色/bg-danger：紅色/
 bg-warning：黃色/bg-info：青色/bg-light：淡灰/bg-dark：深灰
+<p class="fs-4 fw-bold text-center">中山玉樞服氣經</p>
+字體4 粗體 置中
+巢狀結構grid system
+容器>列>欄>列>欄
