@@ -38,3 +38,6 @@ bg-warning：黃色/bg-info：青色/bg-light：淡灰/bg-dark：深灰
 字體4 粗體 置中
 巢狀結構grid system
 容器>列>欄>列>欄
+引入icons <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+icon顏色在style那邊控制 我是獨立出來再css
+學習寫按鈕 改變按鈕顏色與內容
