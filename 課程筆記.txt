@@ -26,3 +26,11 @@ functional css
 圖
 文
 圖
+order超過5還是分成不同列來做排序
+bg-primary避開內邊界要往下寫一層
+<div class="bg-primary text-white p-3">
+  這是藍色背景的區塊，文字是白色。
+</div>
+如果你使用的是 Bootstrap 5，也可以改用其他類別：
+bg-secondary：灰色/bg-success：綠色/bg-danger：紅色/
+bg-warning：黃色/bg-info：青色/bg-light：淡灰/bg-dark：深灰
