@@ -53,4 +53,5 @@ contact us 的部分 要記得作必填項目 以及一些防呆機制
 main.css 與 bootstrap 順序
 新增跑馬燈 遇到師傅照片 顯示不全問題 建議用aspect-ratio
 桌機和手機 分開顯示
-modal 建立footer
+modal 會員登入畫面  建立footer
+老爺飯店  側邊的滾動監控
