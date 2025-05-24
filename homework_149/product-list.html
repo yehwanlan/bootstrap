@@ -14,7 +14,7 @@
 
     body {
       font-family: Arial, sans-serif;
-      padding-top: 70px;
+      padding-top: 80px;
     }
 
     .navbar {
@@ -67,31 +67,37 @@
     }
 
     .card-img-top {
-      border-radius: 1rem 1rem 0 0;
-      object-fit: cover;
-      height: 170px;
-    }
-
-    .teacher-avatar-crop {
       width: 100%;
-      height: 200px;
-      /* 高度加大！ */
-      overflow: hidden;
+      height: 420px;
+      /* 全部都 220px，卡片統一 */
+      object-fit: cover;
       border-radius: 1rem 1rem 0 0;
       background: #eee;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
     }
 
     .teacher-avatar-crop img {
       width: 100%;
-      height: 220px;
-      /* 圖片本身更高，object-position: top確保臉在上 */
+      height: 100%;
       object-fit: cover;
-      object-position: top center;
+      /* 圖片自動裁切填滿，不留白 */
+      object-position: center top;
+      /* 裁切重心往上，可露臉多一點 */
       border-radius: 1rem 1rem 0 0;
     }
+
+    .teacher-avatar-crop {
+      width: 100%;
+      height: 420px;
+      /* 想要多高都可以調，越高露得越多 */
+      overflow: hidden;
+      border-radius: 1rem 1rem 0 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      background: #fff;
+    }
+
+
 
 
     .card-title {
@@ -191,8 +197,7 @@
         </div>
         <div class="col-12 col-md-4 mb-4">
           <div class="card h-100">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
-              class="card-img-top" alt="深層組織按摩">
+            <img src="massageProduct/massage_Deep.png" class="card-img-top" alt="深層組織按摩">
             <div class="card-body">
               <h5 class="card-title">深層組織按摩</h5>
               <p class="card-text">針對深層肌肉層，徹底紓解長期緊繃壓力。</p>
@@ -200,6 +205,7 @@
             </div>
           </div>
         </div>
+
         <div class="col-12 col-md-4 mb-4">
           <div class="card h-100">
             <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80"
@@ -217,26 +223,27 @@
     <div id="teacherSection">
       <h2 class="section-title">師傅介紹</h2>
       <div class="row">
+
         <div class="col-12 col-md-4 mb-4">
           <div class="card h-100">
             <div class="teacher-avatar-crop">
-              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="林師傅">
+              <img src="seafood/seafood_1wang.png" alt="王師傅">
             </div>
             <div class="card-body text-center">
-              <h5 class="card-title">林師傅</h5>
-              <p class="card-text">15年經驗，深層組織按摩專家。</p>
-              <a href="product.html?id=teacher-lin" class="btn btn-primary btn-sm mt-2">師傅介紹</a>
+              <h5 class="card-title">王師傅</h5>
+              <p class="card-text">擅長芳療與客製化放鬆課程。</p>
+              <a href="product.html?id=teacher-wang" class="btn btn-primary btn-sm mt-2">師傅介紹</a>
             </div>
           </div>
         </div>
         <div class="col-12 col-md-4 mb-4">
           <div class="card h-100">
             <div class="teacher-avatar-crop">
-              <img src="../homework_149/seafood/seafood_1wang.png" alt="王老師">
+              <img src="seafood/seafood_2lin.png" alt="林師傅">
             </div>
             <div class="card-body text-center">
-              <h5 class="card-title">王師傅</h5>
-              <p class="card-text">擅長芳療與客製化放鬆課程。</p>
+              <h5 class="card-title">林師傅</h5>
+              <p class="card-text">15年服務經驗，擅長深層組織放鬆。</p>
               <a href="product.html?id=teacher-wang" class="btn btn-primary btn-sm mt-2">師傅介紹</a>
             </div>
           </div>
