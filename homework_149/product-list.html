@@ -78,20 +78,30 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      /* 填滿 */
       object-position: center top;
+      /* 裁切靠上 */
       border-radius: 1rem 1rem 0 0;
       cursor: pointer;
     }
 
     .teacher-avatar-crop {
       width: 100%;
+      /* 外框寬度100%，跟卡片同寬 */
       height: 420px;
+      /* 外框高度420px，這個高度你可以隨需求調整 */
       overflow: hidden;
+      /* 超出外框的圖片部分會被「裁切」掉，只顯示框內內容 */
       border-radius: 1rem 1rem 0 0;
+      /* 上方圓角，讓卡片有現代感 */
       display: flex;
+      /* 啟用flex，讓內部元素方便對齊 */
       align-items: flex-start;
+      /* 垂直方向上靠「上方」對齊（臉比較容易在上面） */
       justify-content: center;
+      /* 水平置中對齊，圖片永遠在卡片中央 */
       background: #fff;
+      /* 背景設成白色，跟整體卡片風格一致 */
     }
 
     .card-title {
