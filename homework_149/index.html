@@ -364,6 +364,18 @@
         // 自動輪播（如不需要可註解掉）
         setInterval(() => nextSlide(), 4000);
     </script>
+    <button id="backToTop" title="回到頂部"
+        style="position:fixed; right:24px; bottom:40px; z-index:999; display:none; background:linear-gradient(135deg, #6b8e6b 0%, #a8c4a2 100%); color:#fff; border:none; border-radius:50%; width:48px; height:48px; box-shadow:0 2px 8px rgba(120,140,120,.13);">
+        <i class="bi bi-arrow-up" style="font-size:1.6rem;"></i>
+    </button>
+    <script>
+        window.addEventListener('scroll', function () {
+            document.getElementById('backToTop').style.display = (window.scrollY > 200) ? 'block' : 'none';
+        });
+        document.getElementById('backToTop').onclick = function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
 </body>
 
 </html>
