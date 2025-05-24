@@ -77,6 +77,15 @@
         footer {
             background: #f8f9fa;
         }
+
+        .nav-link.active {
+            color: #fff !important;
+            background: var(--primary-gradient) !important;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(120, 140, 120, 0.15);
+            transition: background 0.3s;
+        }
     </style>
 </head>
 
@@ -90,6 +99,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">首頁</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">關於我們</a></li>
                     <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">按摩服務</a>
@@ -102,7 +112,6 @@
                     </li> -->
                     <li class="nav-item"><a class="nav-link" href="store.html">分店資訊</a></li>
                     <li class="nav-item"><a class="nav-link" href="product-list.html">服務介紹</a></li>
-                    <li class="nav-item"><a class="nav-link" href="store.html">分店資訊</a></li>
                     <li class="nav-item"><a class="nav-link" href="faq.html">常見問題</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">預約諮詢</a></li>
                 </ul>
