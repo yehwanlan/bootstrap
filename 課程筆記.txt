@@ -63,3 +63,24 @@ FAQ手風琴
 5/25下午
 active的狀態 讓使用者清楚自己當前在哪個頁面
 下載 bootstrap 原始碼Source files 
+下載延伸套件 live sass compiler
+{
+    "editor.formatOnSave": true,              // 存檔時自動格式化 (自動排版)
+    "editor.fontSize": 16,                    // 編輯器字體大小
+    "editor.wordWrap": "on",                  // 超長自動換行
+    "git.autofetch": true,                    // Git 自動抓新版本
+    "terminal.integrated.defaultProfile.windows": "Git Bash",   // 終端機預設是 Git Bash
+    "liveServer.settings.donotShowInfoMsg": true,               // Live Server 不顯示提示
+    "liveSassCompile.settings.formats": [                       // 重點！Sass 編譯格式設定
+        {
+            "format": "expanded",             // 編譯出來的 CSS 有排版(可讀性高)
+            "extensionName": ".css",          // 輸出副檔名
+            "savePath": "~/../css/",          // **編譯後的 CSS 檔案要存到哪個資料夾** (這行最重要)
+            "savePathReplacementPairs": null  // 無額外路徑取代規則
+        }
+    ]
+}
+/project-root
+  /scss        <--- 你的 .scss 檔案
+  /css         <--- 編譯好的 .css 檔案
+  index.html
