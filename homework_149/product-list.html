@@ -11,9 +11,7 @@
 </head>
 
 <body>
-  <!-- Navigation -->
   <!-- Navbar -->
-  <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-2">
     <div class="container">
       <a class="navbar-brand" href="index.html">心靈舒壓</a>
@@ -23,13 +21,12 @@
       <div class="collapse navbar-collapse" id="navCollapse">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
-          <li class="nav-item"><a class="nav-link " href="about.html">關於我們</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">關於我們</a></li>
           <li class="nav-item"><a class="nav-link" href="store.html">分店資訊</a></li>
           <li class="nav-item"><a class="nav-link active" href="product-list.html">服務介紹</a></li>
           <li class="nav-item"><a class="nav-link" href="faq.html">常見問題</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">聯絡我們</a></li>
         </ul>
-        <!-- icons 放這邊！不要包在 <ul> 裡 -->
         <div class="d-flex ms-2">
           <a href="#" class="text-primary mx-2" data-bs-toggle="modal" data-bs-target="#userModal" title="會員登入">
             <i class="bi bi-person-circle fs-3"></i>
@@ -41,6 +38,7 @@
       </div>
     </div>
   </nav>
+
   <!-- Page Header -->
   <section class="page-header">
     <div class="container">
@@ -48,21 +46,72 @@
       <p class="lead">專業按摩課程與頂尖師傅，給你全方位舒壓體驗</p>
     </div>
   </section>
-  <div class="container">
+  <div class="container my-5">
+    <!-- 麵包屑 -->
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb bg-transparent p-0">
+        <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+        <li class="breadcrumb-item active" aria-current="page">服務介紹</li>
+      </ol>
+    </nav>
     <!-- 頁籤區 -->
     <ul class="nav nav-tabs mb-4 mt-4 justify-content-center" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
+        <!-- 師傅介紹：active -->
         <button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button"
-          role="tab" aria-controls="tab1" aria-selected="true">按摩介紹</button>
+          role="tab" aria-controls="tab1" aria-selected="true">師傅介紹</button>
       </li>
       <li class="nav-item" role="presentation">
+        <!-- 按摩介紹：移除 active -->
         <button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab"
-          aria-controls="tab2" aria-selected="false">師傅介紹</button>
+          aria-controls="tab2" aria-selected="false">按摩介紹</button>
       </li>
     </ul>
     <div class="tab-content" id="myTabContent">
+      <!-- 師傅介紹內容 show active -->
       <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
-        <!-- 按摩介紹內容 -->
+        <div class="row">
+          <div class="col-12 col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="teacher-avatar-crop">
+                <img src="seafood/seafood_1wang.png" alt="王師傅" onclick="showFullImage(this)">
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">王師傅</h5>
+                <p class="card-text">擅長芳療與客製化放鬆課程。</p>
+                <a href="seafood/seafood1.html" class="btn btn-primary btn-sm mt-2">師傅介紹</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="teacher-avatar-crop">
+                <img src="seafood/seafood_2lin.png" alt="林師傅" onclick="showFullImage(this)">
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">林師傅</h5>
+                <p class="card-text">15年服務經驗，擅長深層組織放鬆。</p>
+                <a href="seafood/seafood2.html" class="btn btn-primary btn-sm mt-2">師傅介紹</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="teacher-avatar-crop">
+                <img src="seafood/seafood_3hsu.png" alt="許師傅" onclick="showFullImage(this)">
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">許師傅</h5>
+                <p class="card-text">5年服務經驗，擅長器械式放鬆。</p>
+                <a href="seafood/seafood3.html" class="btn btn-primary btn-sm mt-2">師傅介紹</a>
+              </div>
+            </div>
+          </div>
+          <!-- 可以繼續加更多師傅卡片 -->
+        </div>
+      </div>
+      <!-- 按摩介紹內容 -->
+      <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
         <div class="row">
           <div class="col-12 col-md-4 mb-4">
             <div class="card h-100">
@@ -96,48 +145,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
-        <!-- 師傅介紹內容 -->
-        <div class="row">
-          <div class="col-12 col-md-4 mb-4">
-            <div class="card h-100">
-              <div class="teacher-avatar-crop">
-                <img src="seafood/seafood_1wang.png" alt="王師傅" onclick="showFullImage(this)">
-              </div>
-              <div class="card-body text-center">
-                <h5 class="card-title">王師傅</h5>
-                <p class="card-text">擅長芳療與客製化放鬆課程。</p>
-                <a href="product.html?id=teacher-wang" class="btn btn-primary btn-sm mt-2">師傅介紹</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-4 mb-4">
-            <div class="card h-100">
-              <div class="teacher-avatar-crop">
-                <img src="seafood/seafood_2lin.png" alt="林師傅" onclick="showFullImage(this)">
-              </div>
-              <div class="card-body text-center">
-                <h5 class="card-title">林師傅</h5>
-                <p class="card-text">15年服務經驗，擅長深層組織放鬆。</p>
-                <a href="product.html?id=teacher-wang" class="btn btn-primary btn-sm mt-2">師傅介紹</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-4 mb-4">
-            <div class="card h-100">
-              <div class="teacher-avatar-crop">
-                <img src="seafood/seafood_3hsu.png" alt="許師傅" onclick="showFullImage(this)">
-              </div>
-              <div class="card-body text-center">
-                <h5 class="card-title">許師傅</h5>
-                <p class="card-text">5年服務經驗，擅長器械式放鬆。</p>
-                <a href="product.html?id=teacher-wang" class="btn btn-primary btn-sm mt-2">師傅介紹</a>
-              </div>
-            </div>
-          </div>
-          <!-- 可以繼續加更多師傅卡片 -->
         </div>
       </div>
     </div>
