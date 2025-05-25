@@ -18,11 +18,12 @@
 body {
   font-family: Arial, sans-serif;
   overflow-x: hidden;
+  padding-top: 80px;
 }
 
-/* 有導航欄的頁面需要 padding-top */
-.has-navbar {
-  padding-top: 80px;
+/* 如果某些頁面不需要 padding-top，可以用這個 class 覆蓋 */
+.no-navbar-padding {
+  padding-top: 0;
 }
 
 /* === 導航欄樣式 === */
