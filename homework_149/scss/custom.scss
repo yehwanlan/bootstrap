@@ -1,4 +1,8 @@
 $primary: #e67e22;
+$font-family-base: 'Microsoft JhengHei', 'PingFang TC', Arial, sans-serif;
+
+
+
 
 $my-color: teal;
 $my-link-color: #e67e22;
@@ -12,5 +16,4 @@ $my-link-color: #e67e22;
     }
 }
 
-// scss-docs-start import-stack
-@import "../bootstrap-5.3.6/scss/bootstrap.scss"
+@import "../bootstrap-5.3.6/scss/bootstrap.scss";

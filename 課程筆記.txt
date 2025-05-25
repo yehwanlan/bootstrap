@@ -97,3 +97,7 @@ a { color: red; } ← 很弱，只針對單純 a
 .my-link { color: green !important; } ← 最強（有 !important）
 
 只要是 <a href="#">，沒指向特定 id，就會把頁面帶回最頂端。這是 HTML 預設行為
+
+$font-family-base: "標楷體", "Times New Roman", serif;
+標楷體在網頁上顯示很粗、字距很怪，而且只有 Windows 內建，
+心心念念的簡報字體失敗啦  網頁效果好差
