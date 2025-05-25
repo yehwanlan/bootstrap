@@ -75,7 +75,7 @@ active的狀態 讓使用者清楚自己當前在哪個頁面
         {
             "format": "expanded",             // 編譯出來的 CSS 有排版(可讀性高)
             "extensionName": ".css",          // 輸出副檔名
-            "savePath": "~/../css/",          // **編譯後的 CSS 檔案要存到哪個資料夾** (這行最重要)
+            "savePath": "~/../css/",          // **編譯後的 CSS 檔案要存到哪個資料夾** (這行最重要) 當前->上一層->選取css資料夾
             "savePathReplacementPairs": null  // 無額外路徑取代規則
         }
     ]
@@ -84,3 +84,16 @@ active的狀態 讓使用者清楚自己當前在哪個頁面
   /scss        <--- 你的 .scss 檔案
   /css         <--- 編譯好的 .css 檔案
   index.html
+
+實際優先順序例子
+a { color: red; } ← 很弱，只針對單純 a
+
+.nav-link { color: #333; } ← 比上面強
+
+.btn-primary { color: #fff; background: blue; } ← 最強（組件自帶複合屬性）
+
+.text-primary { color: #0d6efd; } ← 比 a 還強
+
+.my-link { color: green !important; } ← 最強（有 !important）
+
+只要是 <a href="#">，沒指向特定 id，就會把頁面帶回最頂端。這是 HTML 預設行為

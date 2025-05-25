@@ -1,3 +1,16 @@
-a {
-    color: red;
+$primary: #e67e22;
+
+$my-color: teal;
+$my-link-color: #e67e22;
+
+.demo-scss2 {
+    color: $my-color;
+
+    a {
+        color: $my-link-color;
+        font-size: 1.5rem;
+    }
 }
+
+// scss-docs-start import-stack
+@import "../bootstrap-5.3.6/scss/bootstrap.scss"

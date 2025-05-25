@@ -100,14 +100,16 @@
         </div>
         <div class="modal-body p-4">
           <p class="text-center mb-4">立即登入，享受專屬會員優惠</p>
-          <form>
+          <form id="loginForm" novalidate>
             <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
               <label for="floatingInput">電子郵件</label>
+              <div class="invalid-feedback">請輸入正確的電子郵件（需包含 @ 符號）。</div>
             </div>
             <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
               <label for="floatingPassword">密碼</label>
+              <div class="invalid-feedback">請輸入密碼，密碼不得為空。</div>
             </div>
             <div class="d-flex justify-content-between align-items-center mb-3">
               <div class="form-check">
@@ -118,13 +120,60 @@
             </div>
             <button type="submit" class="btn btn-primary w-100 mb-3">登入</button>
             <div class="text-center">
-              <a href="javascript:;" class="text-decoration-none">還沒有帳號？立即註冊</a>
+              <a href="login.html" class="text-decoration-none" id="registerLink">還沒有帳號？立即註冊</a>
             </div>
           </form>
         </div>
       </div>
     </div>
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const loginForm = document.getElementById("loginForm");
+      const emailInput = document.getElementById("floatingInput");
+      const passwordInput = document.getElementById("floatingPassword");
+
+      loginForm.addEventListener("submit", function (event) {
+        let isValid = true;
+
+        // 電子郵件驗證
+        const emailValue = emailInput.value.trim();
+        if (emailValue === "" || !emailValue.includes("@")) {
+          emailInput.classList.add("is-invalid");
+          isValid = false;
+        } else {
+          emailInput.classList.remove("is-invalid");
+        }
+
+        // 密碼驗證
+        const passwordValue = passwordInput.value.trim();
+        if (passwordValue === "") {
+          passwordInput.classList.add("is-invalid");
+          isValid = false;
+        } else {
+          passwordInput.classList.remove("is-invalid");
+        }
+
+        if (!isValid) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+      });
+
+      // 輸入時即時移除紅框
+      emailInput.addEventListener("input", function () {
+        if (emailInput.value.includes("@")) {
+          emailInput.classList.remove("is-invalid");
+        }
+      });
+      passwordInput.addEventListener("input", function () {
+        if (passwordInput.value.trim() !== "") {
+          passwordInput.classList.remove("is-invalid");
+        }
+      });
+    });
+  </script>
 
   <!-- 購物車 Modal -->
   <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
