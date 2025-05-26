@@ -101,3 +101,7 @@ a { color: red; } ← 很弱，只針對單純 a
 $font-family-base: "標楷體", "Times New Roman", serif;
 標楷體在網頁上顯示很粗、字距很怪，而且只有 Windows 內建，
 心心念念的簡報字體失敗啦  網頁效果好差
+5/26教室自學跟完成作業
+設定家裡電腦端git 格式 換行 emmet等
+修改購物車邏輯
+新增FAQ項目
