@@ -427,18 +427,35 @@
         const slideCount = slides.length;
         const realCount = slideCount - 2;
 
-        // 連續切換監控
-        let switchCount = 0;
+        // 新增連點防爆監控（5秒內最多5次）
+        let clickTimestamps = [];
         const MAX_SWITCH = 5;
+        const LIMIT_DURATION = 5000; // 5秒
         let lockSwitch = false;
 
         function showSwal() {
             Swal.fire({
                 icon: 'info',
-                title: '只有三位師傅!!',
-                text: '別急',
+                title: '目前只有三位師傅!!',
+                text: '積極招募中',
                 confirmButtonColor: '#6b8e6b'
             });
+        }
+
+        function recordClickAndCheck() {
+            const now = Date.now();
+            clickTimestamps.push(now);
+            clickTimestamps = clickTimestamps.filter(ts => now - ts <= LIMIT_DURATION);
+            if (clickTimestamps.length > MAX_SWITCH) {
+                showSwal();
+                lockSwitch = true;
+                setTimeout(() => {
+                    lockSwitch = false;
+                    clickTimestamps = [];
+                }, 2000);
+                return false; // 代表鎖住
+            }
+            return true; // 代表可以繼續
         }
 
         function renderDots(currentIdx) {
@@ -454,6 +471,7 @@
         }
         updateTrack();
         setTimeout(() => track.style.transition = '', 30);
+
         function updateDots() {
             let realIdx = index - 1;
             if (realIdx < 0) realIdx = realCount - 1;
@@ -464,42 +482,27 @@
 
         function nextSlide() {
             if (lockSwitch) return;
-            switchCount++;
-            if (switchCount > MAX_SWITCH) {
-                showSwal();
-                lockSwitch = true;
-                setTimeout(() => {
-                    lockSwitch = false;
-                    switchCount = 0;
-                }, 2000);
-                return;
-            }
+            if (!recordClickAndCheck()) return;
             if (index >= slideCount - 1) return;
             index++;
             track.style.transition = 'transform 0.5s cubic-bezier(.7,.3,0,1)';
             track.style.transform = `translateX(-${index * 100}%)`;
             updateDots();
         }
+
         function prevSlide() {
             if (lockSwitch) return;
-            switchCount++;
-            if (switchCount > MAX_SWITCH) {
-                showSwal();
-                lockSwitch = true;
-                setTimeout(() => {
-                    lockSwitch = false;
-                    switchCount = 0;
-                }, 2000);
-                return;
-            }
+            if (!recordClickAndCheck()) return;
             if (index <= 0) return;
             index--;
             track.style.transition = 'transform 0.5s cubic-bezier(.7,.3,0,1)';
             track.style.transform = `translateX(-${index * 100}%)`;
             updateDots();
         }
+
         document.getElementById('nextBtn').onclick = nextSlide;
         document.getElementById('prevBtn').onclick = prevSlide;
+
         track.addEventListener('transitionend', () => {
             if (index === slideCount - 1) {
                 track.style.transition = 'none';
@@ -515,10 +518,12 @@
             }
             updateDots();
         });
-        // 點擊圓點跳轉
+
+        // 點擊圓點跳轉，並套用同樣的連點防爆
         dotsContainer.addEventListener('click', e => {
+            if (lockSwitch) return;
             if (e.target.tagName.toLowerCase() === 'i') {
-                switchCount = 0; // 點圓點就重置計數，讓 UX 流暢
+                if (!recordClickAndCheck()) return;
                 const all = Array.from(dotsContainer.children);
                 const dotIdx = all.indexOf(e.target);
                 if (dotIdx >= 0) {
@@ -529,9 +534,12 @@
                 }
             }
         });
-        // 自動輪播（如不需要可註解掉）
+
+        // 自動輪播（如不需要自動可註解掉這段）
         setInterval(() => nextSlide(), 4000);
+
     </script>
+
 
     <button id="backToTop" title="回到頂部"
         style="position:fixed; right:24px; bottom:40px; z-index:999; display:none; background:linear-gradient(135deg, #6b8e6b 0%, #a8c4a2 100%); color:#fff; border:none; border-radius:50%; width:48px; height:48px; box-shadow:0 2px 8px rgba(120,140,120,.13);">
