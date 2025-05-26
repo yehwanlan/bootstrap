@@ -256,35 +256,42 @@
     </section>
     <!-- Stats Section ... 以下照舊 ... -->
     <section class="stats-section text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 my-3">
-                    <div class="fs-1 fw-bold"
-                        style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                        10K+</div>
-                    <div>客戶滿意</div>
-                </div>
-                <div class="col-md-3 my-3">
-                    <div class="fs-1 fw-bold"
-                        style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                        5+</div>
-                    <div>年經驗</div>
-                </div>
-                <div class="col-md-3 my-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 my-3">
+                <div class="fs-1 fw-bold"
+                    style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                    10K+</div>
+                <div>客戶滿意</div>
+            </div>
+            <div class="col-md-3 my-3">
+                <div class="fs-1 fw-bold"
+                    style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                    5+</div>
+                <div>年經驗</div>
+            </div>
+            <!-- 分店據點加上連結 -->
+            <div class="col-md-3 my-3">
+                <a href="store.html" style="text-decoration:none; color:inherit;">
                     <div class="fs-1 fw-bold"
                         style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                         3</div>
                     <div>分店據點</div>
-                </div>
-                <div class="col-md-3 my-3">
+                </a>
+            </div>
+            <!-- 專業按摩師加上連結 -->
+            <div class="col-md-3 my-3">
+                <a href="product-list.html" style="text-decoration:none; color:inherit;">
                     <div class="fs-1 fw-bold"
                         style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                         2+</div>
                     <div>專業按摩師</div>
-                </div>
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
     <!-- Footer ... 以下照舊 ... -->
     <footer class="text-center py-5 border-top">
         <div class="container">
@@ -447,7 +454,6 @@
         }
         updateTrack();
         setTimeout(() => track.style.transition = '', 30);
-
         function updateDots() {
             let realIdx = index - 1;
             if (realIdx < 0) realIdx = realCount - 1;
